@@ -1,0 +1,20 @@
+[{"id":"487cb2dc.0ce29c","type":"tab","label":"Flow 
+1","disabled":false,"info":""},{"id":"27166d5e.605b12","type":"rpi-gpio 
+out","z":"487cb2dc.0ce29c","name":"Green 
+LED","pin":"11","set":true,"level":"0","freq":"","out":"out","x":590,"y":220,"wires":[]
+},{"id":"90417995.1fe048","type":"rpi-gpio 
+in","z":"487cb2dc.0ce29c","name":"Button","pin":"7","intype":"up","debounce":"25
+","read":true,"x":90,"y":220,"wires":[["5aca02a7.32e44c","3f37a15e.986fae"]]},{"id":
+"5aca02a7.32e44c","type":"switch","z":"487cb2dc.0ce29c","name":"if input is 
+1","property":"payload","propertyType":"msg","rules":[{"t":"eq","v":"1","vt":"str"},{"
+t":"else"}],"checkall":"true","repair":false,"outputs":2,"x":250,"y":220,"wires":[["a56
+1736b.5621a"],["5741c8c1.a806c8"]]},{"id":"a561736b.5621a","type":"change","z":"
+487cb2dc.0ce29c","name":"Change to 
+0","rules":[{"t":"set","p":"payload","pt":"msg","to":"0","tot":"str"}],"action":"","prop
+erty":"","from":"","to":"","reg":false,"x":410,"y":140,"wires":[["27166d5e.605b12"]]}
+,{"id":"5741c8c1.a806c8","type":"change","z":"487cb2dc.0ce29c","name":"Change 
+to 
+1","rules":[{"t":"set","p":"payload","pt":"msg","to":"1","tot":"str"}],"action":"","prop
+erty":"","from":"","to":"","reg":false,"x":410,"y":280,"wires":[["27166d5e.605b12"]]}
+,{"id":"3f37a15e.986fae","type":"debug","z":"487cb2dc.0ce29c","name":"","active":t
+rue,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","x":240,"y":80,"wires":[]}]
