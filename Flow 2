@@ -1,0 +1,20 @@
+[{"id":"3ff03afa.036036","type":"tab","label":"Flow 
+2","disabled":false,"info":""},{"id":"a5759be3.c64a58","type":"inject","z":"3ff03afa.0
+36036","name":"","topic":"","payload":"","payloadType":"date","repeat":"5","cronta
+b":"","once":true,"onceDelay":0.1,"x":130,"y":240,"wires":[["b9af8f6f.d3c95"]]},{"id"
+:"b9af8f6f.d3c95","type":"function","z":"3ff03afa.036036","name":"Payload","func":
+"msg.headers={\n        devicekey:\"re7hEhi0N4h77mNs\"\n}\nreturn
+msg;","outputs":1,"noerr":0,"x":320,"y":240,"wires":[["8d44331d.f8ae2","1577cc44.f
+70644"]]},{"id":"8d44331d.f8ae2","type":"http 
+request","z":"3ff03afa.036036","name":"","method":"GET","ret":"txt","url":"http://a
+pi.mediatek.com/mcs/v2/devices/DF9HT1vk/datachannels/Temperature/datapoints.
+csv","tls":"","x":500,"y":240,"wires":[["bc5703cb.6d1c2","bb1d5403.08e068"]]},{"id":
+"bc5703cb.6d1c2","type":"http 
+response","z":"3ff03afa.036036","name":"","statusCode":"","headers":{},"x":830,"y":
+200,"wires":[]},{"id":"1577cc44.f70644","type":"http 
+request","z":"3ff03afa.036036","name":"","method":"GET","ret":"txt","url":"http://a
+pi.mediatek.com/mcs/v2/devices/DF9HT1vk/datachannels/Humidity/datapoints.csv"
+,"tls":"","x":500,"y":180,"wires":[["bc5703cb.6d1c2","bb1d5403.08e068"]]},{"id":"bb
+1d5403.08e068","type":"debug","z":"3ff03afa.036036","name":"","active":true,"tosi
+debar":true,"console":false,"tostatus":false,"complete":"payload","x":710,"y":80,"wi
+res":[]}]
