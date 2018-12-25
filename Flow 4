@@ -1,0 +1,18 @@
+[{"id":"58af6920.d7f6f8","type":"tab","label":"Flow 
+4","disabled":false,"info":""},{"id":"37bc80bb.f0fd1","type":"http 
+in","z":"58af6920.d7f6f8","name":"","url":"/pin4","method":"get","upload":false,"sw
+aggerDoc":"","x":130,"y":160,"wires":[["abb3caf3.4ed4d8"]]},{"id":"62ae7aea.3ec7b
+4","type":"rpi-gpio 
+in","z":"58af6920.d7f6f8","name":"GPIO4","pin":"7","intype":"up","debounce":"25",
+"read":true,"x":130,"y":240,"wires":[["f10c7463.ee08e8"]]},{"id":"f10c7463.ee08e8",
+"type":"function","z":"58af6920.d7f6f8","name":"Set.GPIO","func":"global.set(\"GPI
+O\",msg.payload)\nreturn 
+msg;","outputs":1,"noerr":0,"x":300,"y":240,"wires":[["211d0f45.ee782"]]},{"id":"ab
+b3caf3.4ed4d8","type":"function","z":"58af6920.d7f6f8","name":"Get 
+GPIO","func":"msg.payload =global.get(\"GPUO\");\nreturn 
+msg;","outputs":1,"noerr":0,"x":300,"y":160,"wires":[["75d59647.eab598","211d0f4
+5.ee782"]]},{"id":"75d59647.eab598","type":"http 
+response","z":"58af6920.d7f6f8","name":"","statusCode":"","headers":{},"x":510,"y"
+:140,"wires":[]},{"id":"211d0f45.ee782","type":"debug","z":"58af6920.d7f6f8","nam
+e":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false
+","x":520,"y":260,"wires":[]}]
