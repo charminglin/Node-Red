@@ -1,0 +1,26 @@
+[{"id":"4fc1ba47.b3f414","type":"tab","label":"Flow 
+3","disabled":false,"info":""},{"id":"4d5c8bb5.c045d4","type":"inject","z":"4fc1ba47.
+b3f414","name":"","topic":"","payload":"","payloadType":"date","repeat":"5","cront
+ab":"","once":true,"onceDelay":0.1,"x":270,"y":360,"wires":[["ddf3f291.8b3d2","baf
+cf1b0.e568e"]]},{"id":"ddf3f291.8b3d2","type":"function","z":"4fc1ba47.b3f414","na
+me":"Payload","func":"msg.headers={\n    
+devicekey:\"re7hEhi0N4h77mNs\"\n        };\nmsg.payload=\"Temperature,,25.3
+\";\nreturn 
+msg;","outputs":1,"noerr":0,"x":450,"y":360,"wires":[["5531d78b.e89bb8"]]},{"id":"5
+531d78b.e89bb8","type":"http 
+request","z":"4fc1ba47.b3f414","name":"","method":"POST","ret":"txt","url":"https:
+//api.mediatek.com/mcs/v2/devices/DF9HT1vk/datapoints.csv","tls":"","x":610,"y":3
+60,"wires":[["a2acfe55.3a917","c8dffa7e.bc7088"]]},{"id":"a2acfe55.3a917","type":"
+debug","z":"4fc1ba47.b3f414","name":"","active":true,"tosidebar":true,"console":fal
+se,"tostatus":false,"complete":"false","x":850,"y":240,"wires":[]},{"id":"c8dffa7e.bc7
+088","type":"http 
+response","z":"4fc1ba47.b3f414","name":"","statusCode":"","headers":{},"x":850,"y"
+:360,"wires":[]},{"id":"bafcf1b0.e568e","type":"function","z":"4fc1ba47.b3f414","na
+me":"Payload","func":"msg.headers={\n   
+devicekey:\"re7hEhi0N4h77mNs\"\n        };\nmsg.payload=\"Humidity,,35\";\n
+eturn 
+msg;","outputs":1,"noerr":0,"x":450,"y":260,"wires":[["4632cdde.403a34"]]},{"id":"4
+632cdde.403a34","type":"http 
+request","z":"4fc1ba47.b3f414","name":"","method":"POST","ret":"txt","url":"https:
+//api.mediatek.com/mcs/v2/devices/DF9HT1vk/datapoints.csv","tls":"","x":600,"y":2
+60,"wires":[["a2acfe55.3a917","c8dffa7e.bc7088"]]}]
