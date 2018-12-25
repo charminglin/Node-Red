@@ -1,0 +1,29 @@
+[{"id":"e543aa2c.9f9648","type":"tab","label":"Flow 
+5","disabled":false,"info":""},{"id":"3aeffefd.891a62","type":"http 
+in","z":"e543aa2c.9f9648","name":"Set 
+GPIO5","url":"/setgpio5","method":"get","upload":false,"swaggerDoc":"","x":160,"y"
+:120,"wires":[["54c4eb74.b45ef4","36f4431c.b4177c"]]},{"id":"54c4eb74.b45ef4","ty
+pe":"function","z":"e543aa2c.9f9648","name":"Set to 1","func":"msg.payload = 
+1;\nreturn 
+msg;","outputs":1,"noerr":0,"x":380,"y":240,"wires":[["e070f56b.7b7f68"]]},{"id":"e0
+70f56b.7b7f68","type":"rpi-gpio 
+out","z":"e543aa2c.9f9648","name":"","pin":"29","set":"","level":"0","freq":"","out":
+"out","x":560,"y":280,"wires":[]},{"id":"36f4431c.b4177c","type":"function","z":"e54
+3aa2c.9f9648","name":"Return Status","func":"msg.payload= \"GPIO5 set to 
+HIGH\";\nreturn 
+msg;","outputs":1,"noerr":0,"x":420,"y":80,"wires":[["cb27d10a.55d82","ec8d0370.4
+b0a8"]]},{"id":"ec8d0370.4b0a8","type":"debug","z":"e543aa2c.9f9648","name":"","
+active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"false","x":9
+50,"y":360,"wires":[]},{"id":"cb27d10a.55d82","type":"http 
+response","z":"e543aa2c.9f9648","name":"","statusCode":"","headers":{},"x":950,"y
+":80,"wires":[]},{"id":"c9143ca7.cdd25","type":"http 
+in","z":"e543aa2c.9f9648","name":"Clear 
+GPIO5","url":"/clear5","method":"get","upload":false,"swaggerDoc":"","x":170,"y":3
+60,"wires":[["28aaeb95.ef3734","262d4ef1.34f492"]]},{"id":"28aaeb95.ef3734","typ
+e":"function","z":"e543aa2c.9f9648","name":"Clear to 0","func":"msg.payload = 
+0;\nreturn 
+msg;","outputs":1,"noerr":0,"x":360,"y":360,"wires":[["e070f56b.7b7f68"]]},{"id":"26
+2d4ef1.34f492","type":"function","z":"e543aa2c.9f9648","name":"Return 
+Status","func":"msg.payload= \"GPIO5 set to LOW\";\nreturn 
+msg;","outputs":1,"noerr":0,"x":390,"y":480,"wires":[["cb27d10a.55d82","ec8d0370.
+4b0a8"]]}]
